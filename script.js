@@ -99,7 +99,7 @@ let jobs = [
   },
 ];
 
-function renderJobs() {
+function loadJobs() {
   const container = document.getElementById("jobContainer");
   container.innerHTML = "";
 
@@ -143,7 +143,7 @@ function renderJobs() {
     <p class="text-sm mt-2 text-gray-500">${job.location} • ${job.type} • ${job.salary}</p>
 
 
-    ${job.status === "interview" || job.status === "rejected" ? `<p class="w-32 text-center px-2 py-1 rounded mt-3 ${job.status === "rejected" ? "bg-red-500 text-white" : "bg-green-500 text-white"}">${job.badge}</p>` : ""}
+    ${job.status === "interview" || job.status === "rejected" ? `<p class="w-32 text-center px-2 py-1 rounded mt-3 ${job.status === "rejected" ? "bg-red-200 text-red-600 border border-red-400" : "bg-green-200 text-green-600 border border-green-400"}">${job.badge}</p>` : ""}
 
     <p class="text-sm mt-3 text-gray-600">${job.description}</p>
     <div class="flex gap-2 mt-4">
@@ -188,14 +188,14 @@ function updateStatus(id, status) {
     return job;
   });
   updateDashboard();
-  renderJobs();
+  loadJobs();
 }
 
 function deleteJob(id) {
   let job = jobs.find((j) => j.id === id);
   jobs = jobs.filter((j) => j.id !== id);
   updateDashboard();
-  renderJobs();
+  loadJobs();
 }
 
 function updateDashboard() {
@@ -216,8 +216,8 @@ function changeTab(tab) {
   document
     .getElementById(tab + "Tab")
     .classList.add("bg-indigo-500", "text-white");
-  renderJobs();
+  loadJobs();
 }
 
 updateDashboard();
-renderJobs();
+loadJobs();
