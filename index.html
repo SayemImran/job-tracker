@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Job Application Tracker</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+  <body class="bg-gray-100 min-h-screen">
+    <div class="max-w-7xl mx-auto p-4">
+      <h1 class="text-3xl font-bold mb-6 text-black-600">
+        Job Application Tracker
+        
+      </h1>
+
+      <!-- Dashboard Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+        <div class="bg-white p-6 rounded-xl shadow">
+          <h2 class="text-gray-500">Total Jobs</h2>
+          <p id="totalCount" class="text-3xl font-bold">8</p>
+        </div>
+
+        <div class="bg-white p-6 rounded-xl shadow">
+          <h2 class="text-gray-500">Interview</h2>
+          <p id="interviewCount" class="text-3xl font-bold text-green-500">0</p>
+        </div>
+
+        <div class="bg-white p-6 rounded-xl shadow">
+          <h2 class="text-gray-500">Rejected</h2>
+          <p id="rejectedCount" class="text-3xl font-bold text-red-500">0</p>
+        </div>
+      </div>
+
+      <!-- Title section -->
+      <div class="flex justify-between items-center mb-4">
+        <h2 class="text-2xl font-semibold">Available Jobs</h2>
+        <span id="tabCount" class="text-gray-500">8</span>
+      </div>
+
+      <!-- Tabs sections -->
+      <div class="flex gap-4 mb-6">
+        <button
+          onclick="changeTab('all')"
+          id="allTab"
+          class="tabBtn bg-indigo-500 text-white px-4 py-2 rounded"
+        >
+          All
+        </button>
+        <button
+          onclick="changeTab('interview')"
+          id="interviewTab"
+          class="tabBtn bg-gray-200 px-4 py-2 rounded"
+        >
+          Interview
+        </button>
+        <button
+          onclick="changeTab('rejected')"
+          id="rejectedTab"
+          class="tabBtn bg-gray-200 px-4 py-2 rounded"
+        >
+          Rejected
+        </button>
+      </div>
+
+      <!-- Cards section -->
+      <div id="jobContainer" class="flex flex-col gap-4"></div>
+    </div>
+    <script src="./script.js"></script>
+  </body>
+</html>
