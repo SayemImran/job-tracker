@@ -192,14 +192,11 @@ function updateDashboard() {
   document.getElementById("rejectedCount").innerText = jobs.filter((j) => j.status === "rejected",).length; // count of rejected jobs
 }
 
+// change the current tab and reload jobs based on the selected tab
 function changeTab(tab) {
   currentTab = tab;
-  document
-    .querySelectorAll(".tabBtn")
-    .forEach((btn) => btn.classList.remove("bg-indigo-500", "text-white"));
-  document
-    .getElementById(tab + "Tab")
-    .classList.add("bg-indigo-500", "text-white");
+  document.querySelectorAll(".tabBtn").forEach((btn) => btn.classList.remove("bg-indigo-500", "text-white"));
+  document.getElementById(tab + "Tab").classList.add("bg-indigo-500", "text-white");
   loadJobs();
 }
 
