@@ -187,13 +187,9 @@ function deleteJob(id) {
 }
 
 function updateDashboard() {
-  document.getElementById("totalCount").innerText = jobs.length;
-  document.getElementById("interviewCount").innerText = jobs.filter(
-    (j) => j.status === "interview",
-  ).length;
-  document.getElementById("rejectedCount").innerText = jobs.filter(
-    (j) => j.status === "rejected",
-  ).length;
+  document.getElementById("totalCount").innerText = jobs.length; // total count of jobs
+  document.getElementById("interviewCount").innerText = jobs.filter((j) => j.status === "interview",).length; // count of interview jobs
+  document.getElementById("rejectedCount").innerText = jobs.filter((j) => j.status === "rejected",).length; // count of rejected jobs
 }
 
 function changeTab(tab) {
