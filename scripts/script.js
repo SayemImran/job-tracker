@@ -142,25 +142,13 @@ function loadJobs() {
     <p class="text-sm text-gray-500">${job.company}</p>
     <p class="text-sm mt-2 text-gray-500">${job.location} • ${job.type} • ${job.salary}</p>
 
-
     ${job.status === "interview" || job.status === "rejected" ? `<p class="w-32 text-center px-2 py-1 rounded mt-3 ${job.status === "rejected" ? "bg-red-200 text-red-600 border border-red-400" : "bg-green-200 text-green-600 border border-green-400"}">${job.badge}</p>` : ""}
-
     <p class="text-sm mt-3 text-gray-600">${job.description}</p>
     <div class="flex gap-2 mt-4">
-      <button onclick="updateStatus(${job.id}, 'interview')" 
-        class="flex px-6 py-2 border border-green-500 rounded cursor-pointer ${
-          job.status === "interview"
-            ? "bg-green-500 text-white"
-            : "bg-transparent text-green-500"
-        } hover:bg-green-500 hover:text-white">
+      <button onclick="updateStatus(${job.id}, 'interview')"class="flex px-6 py-2 border border-green-500 rounded cursor-pointer ${job.status === "interview"? "bg-green-500 text-white": "bg-transparent text-green-500"} hover:bg-green-500 hover:text-white">
         Interview
       </button>
-      <button onclick="updateStatus(${job.id}, 'rejected')" 
-        class="flex px-6 py-2 border border-red-500 rounded cursor-pointer ${
-          job.status === "rejected"
-            ? "bg-red-500 text-white"
-            : "bg-transparent text-red-500"
-        } hover:bg-red-500 hover:text-white">
+      <button onclick="updateStatus(${job.id}, 'rejected')"class="flex px-6 py-2 border border-red-500 rounded cursor-pointer ${job.status === "rejected"? "bg-red-500 text-white": "bg-transparent text-red-500"} hover:bg-red-500 hover:text-white">
         Rejected
       </button>
     </div>
