@@ -113,7 +113,7 @@ function loadJobs() {
   if (filtered.length === 0) {
     container.innerHTML = `
       <div class="col-span-full text-center py-10">
-        <div class="text-5xl mb-4"><img src="./jobs.png" alt="" class="mx-auto"></div>
+        <div class="text-5xl mb-4"><img src="./assets/jobs.png" alt="" class="mx-auto"></div>
         <h3 class="text-xl font-semibold">No Jobs Available</h3>
         <p class="text-gray-500">Check back soon for new job opportunities</p>
       </div>
